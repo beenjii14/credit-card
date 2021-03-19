@@ -33,9 +33,20 @@ module.exports = {
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            publicPath: path.resolve(__dirname, 'src/assets/images'),
+                        },
                     },
                     'css-loader',
                     'sass-loader',
+                ],
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                    },
                 ],
             },
         ],
