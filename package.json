@@ -20,6 +20,7 @@
 	"description": "Project about design credit card",
 	"dependencies": {
 		"async": "^3.2.0",
+		"axios": "^0.18.0",
 		"react": "^17.0.1",
 		"react-dom": "^17.0.1",
 		"sweetalert2": "^10.15.6"
