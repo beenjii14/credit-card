@@ -24,3 +24,7 @@ export function messageAlert({ type, title, text, textButton, timer, html }) {
         timer: timer ? timer : 50000
     });
 }
+
+export function cardFormat({ card }) {
+    return card.replace(/(\d{4})/, '$1 ').replace(/(\d{4}) (\d{4})/, '$1 $2 ').replace(/(\d{4}) (\d{4}) (\d{4})/, '$1 $2 $3 ');
+}

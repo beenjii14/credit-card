@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import '../../assets/styles/App.scss';
+import { cardFormat } from '../../helpers';
 
 const CreditCard = ({ onSubmit, loading }) => {
     const [data, setData] = useState({});
@@ -29,7 +30,7 @@ const CreditCard = ({ onSubmit, loading }) => {
                 <div className={`credit-card ${cvv.showCvv ? 'active' : ''}`}>
                     <div className="card-1">
                         <p className="num-card">
-                            {cardNumber ? cardNumber.replace(/(\d{4})/, '$1 ').replace(/(\d{4}) (\d{4})/, '$1 $2 ').replace(/(\d{4}) (\d{4}) (\d{4})/, '$1 $2 $3 ') : ''}
+                            {cardNumber ? cardFormat({ card: cardNumber}) : ''}
                         </p>
                         <p className="expired">{month ? month : ''}/{year ? year : ''}</p>
                         <p className="name">{cardName ? cardName.toUpperCase().trim() : ''}</p>
